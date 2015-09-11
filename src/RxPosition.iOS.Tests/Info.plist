@@ -18,11 +18,7 @@
 		<integer>2</integer>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>RxLocation.Tests</string>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>location</string>
-	</array>
+	<string>rxlocation.tests</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Please</string>
 	<key>UISupportedInterfaceOrientations</key>
@@ -32,6 +28,10 @@
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
 	</array>
 </dict>
 </plist>

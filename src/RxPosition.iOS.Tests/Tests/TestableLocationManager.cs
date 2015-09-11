@@ -28,5 +28,4 @@ namespace RxPosition.iOS.Tests
             base.StopUpdatingLocation();
         }
     }
-    
 }

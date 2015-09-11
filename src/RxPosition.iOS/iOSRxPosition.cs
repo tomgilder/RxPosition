@@ -4,6 +4,8 @@ using CoreLocation;
 using System.Reactive.Linq;
 using UIKit;
 using System.Reactive.Disposables;
+using Foundation;
+using RxPosition.iOS;
 
 namespace RxPosition
 {
@@ -46,7 +48,7 @@ namespace RxPosition
 
                 manager.ObservableAuthorizationStatus()
                        .Where(status => status == CLAuthorizationStatus.NotDetermined)
-                       .Subscribe(_ => manager.RequestWhenInUseAuthorization()),
+                    .Subscribe(_ => manager.RequestAuthorization(NSBundle.MainBundle)),
 
                 Disposable.Create(manager.StopUpdatingLocation)
             );

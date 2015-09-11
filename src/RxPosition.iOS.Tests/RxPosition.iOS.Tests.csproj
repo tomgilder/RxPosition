@@ -118,6 +118,7 @@
     <Compile Include="UnitTestAppDelegate.cs" />
     <Compile Include="Tests\RxLocationTests.cs" />
     <Compile Include="Tests\TestableLocationManager.cs" />
+    <Compile Include="Tests\AuthorizeTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\xunit.core.2.0.0\build\Xamarin.iOS\xunit.core.props" Condition="Exists('..\packages\xunit.core.2.0.0\build\Xamarin.iOS\xunit.core.props')" />

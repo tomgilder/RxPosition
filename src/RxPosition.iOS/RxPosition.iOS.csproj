@@ -56,6 +56,8 @@
     <Compile Include="MainThreadReturnExtention.cs" />
     <Compile Include="CLLocationManagerExtentions.cs" />
     <Compile Include="iOSRxPosition.cs" />
+    <Compile Include="CLLocationManagerAuthorizeExtentions.cs" />
+    <Compile Include="NSBundleExtentions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>

@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RxPosition.iOS", "RxPositio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RxPosition.Core", "RxPosition.Core\RxPosition.Core.csproj", "{FA4353D8-D23E-4BE8-8AFF-4CABA6F19581}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RxPosition.iOS.Tests", "RxPosition.iOS.Tests", "{956F484F-BD6F-4253-A386-CE98C7268B26}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RxPosition.iOS.Tests", "RxPosition.iOS.Tests\RxPosition.iOS.Tests.csproj", "{5856C308-63C1-49E6-8A54-634651915B7D}"
 EndProject
 Global
@@ -53,5 +55,8 @@ Global
 		{FA4353D8-D23E-4BE8-8AFF-4CABA6F19581}.Release|iPhone.Build.0 = Release|Any CPU
 		{FA4353D8-D23E-4BE8-8AFF-4CABA6F19581}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{FA4353D8-D23E-4BE8-8AFF-4CABA6F19581}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5856C308-63C1-49E6-8A54-634651915B7D} = {956F484F-BD6F-4253-A386-CE98C7268B26}
 	EndGlobalSection
 EndGlobal
