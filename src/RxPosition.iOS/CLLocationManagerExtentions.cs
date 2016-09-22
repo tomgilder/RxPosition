@@ -1,9 +1,7 @@
 using System;
-using CoreLocation;
 using System.Linq;
 using System.Reactive.Linq;
-using Foundation;
-using UIKit;
+using CoreLocation;
 
 namespace RxPosition
 {

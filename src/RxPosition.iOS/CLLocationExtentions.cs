@@ -14,14 +14,6 @@ namespace RxPosition
                 altitide:   new Distance(location.Altitude),
                 timestamp:  (DateTime)location.Timestamp
             );
-
-            IRxPosition provider = new iOSRxPosition();
-            provider.Position.Subscribe(
-                onNext:  pos => Console.WriteLine(pos.Coordinate.Latitude),
-                onError: ex => Console.WriteLine("LocationServicesAccessDenied thrown, no access to location"));
-
-
-
         }
 
         public static Coordinate ToRxCoordinate(this CLLocationCoordinate2D coordinate)

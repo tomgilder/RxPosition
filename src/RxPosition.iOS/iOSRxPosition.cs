@@ -23,7 +23,7 @@ namespace RxPosition
         {
             _locationManagerFactory = locationManagerFactory;
 
-            this.Position = Observable.Create<Position>(Subscribe)
+            Position = Observable.Create<Position>(Subscribe)
                 .Publish()
                 .RefCount();
         }

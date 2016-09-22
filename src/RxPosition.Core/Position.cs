@@ -6,10 +6,10 @@ namespace RxPosition.Core
     {
         public Position(Coordinate coordinate, Accuracy accuracy, Distance altitide, DateTimeOffset timestamp)
         {
-            this.Coordinate = coordinate;
-            this.Accuracy = accuracy;
-            this.Altitude = altitide;
-            this.Timestamp = timestamp;
+            Coordinate = coordinate;
+            Accuracy = accuracy;
+            Altitude = altitide;
+            Timestamp = timestamp;
         }
             
         public Coordinate Coordinate { get; }
