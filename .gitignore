@@ -197,3 +197,4 @@ FakesAssemblies/
 
 # Xamarin 
 Components/
+.DS_Store
