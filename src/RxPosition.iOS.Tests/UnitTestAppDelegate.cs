@@ -1,11 +1,9 @@
-﻿using Foundation;
+﻿using System.Reflection;
+using CoreLocation;
+using Foundation;
 using UIKit;
 using Xunit.Runner;
 using Xunit.Sdk;
-using System.Reflection;
-using System;
-using System.Threading.Tasks;
-using CoreLocation;
 
 namespace RxPosition.iOS.Tests
 {
@@ -14,7 +12,7 @@ namespace RxPosition.iOS.Tests
     {
         CLLocationManager _manager = new CLLocationManager();
 
-        public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+        public override bool FinishedLaunching(UIApplication uiApplication, NSDictionary launchOptions)
         {
             _manager.RequestAlwaysAuthorization();
 
@@ -36,7 +34,7 @@ namespace RxPosition.iOS.Tests
             TerminateAfterExecution = true;
             #endif
 
-            return base.FinishedLaunching(app, options);
+            return base.FinishedLaunching(uiApplication, launchOptions);
         }
 
     }

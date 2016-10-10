@@ -1,9 +1,7 @@
 using System;
-using Xunit;
-using Foundation;
 using CoreLocation;
-using System.Reactive;
-using System.Reactive.Linq;
+using Foundation;
+using Xunit;
 
 namespace RxPosition.iOS.Tests
 {
