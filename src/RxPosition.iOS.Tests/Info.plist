@@ -33,5 +33,11 @@
 	<array>
 		<string>location</string>
 	</array>
+	<key>CFBundleName</key>
+	<string>RxLocation.iOSTests</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Please, go on</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
 </dict>
 </plist>

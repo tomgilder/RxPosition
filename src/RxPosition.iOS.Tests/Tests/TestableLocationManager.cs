@@ -8,7 +8,11 @@ namespace RxPosition.iOS.Tests
         public static TestableLocationManager Create()
         {
             TestableLocationManager manager = null;
-            UIApplication.SharedApplication.InvokeOnMainThread(() => manager = new TestableLocationManager());
+
+            UIApplication.SharedApplication.InvokeOnMainThread(
+                () => manager = new TestableLocationManager()
+            );
+
             return manager;
         }
 

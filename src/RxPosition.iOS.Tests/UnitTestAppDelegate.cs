@@ -5,17 +5,21 @@ using Xunit.Sdk;
 using System.Reflection;
 using System;
 using System.Threading.Tasks;
+using CoreLocation;
 
 namespace RxPosition.iOS.Tests
 {
     [Register("UnitTestAppDelegate")]
     public class UnitTestAppDelegate : RunnerAppDelegate
     {
+        CLLocationManager _manager = new CLLocationManager();
+
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            _manager.RequestAlwaysAuthorization();
+
             // We need this to ensure the execution assembly is part of the app bundle
             AddExecutionAssembly(typeof(ExtensibilityPointFactory).Assembly);
-
 
             // tests can be inside the main assembly
             AddTestAssembly(Assembly.GetExecutingAssembly());
@@ -34,6 +38,7 @@ namespace RxPosition.iOS.Tests
 
             return base.FinishedLaunching(app, options);
         }
+
     }
 }
 
