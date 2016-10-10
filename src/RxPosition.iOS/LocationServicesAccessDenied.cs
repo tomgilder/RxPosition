@@ -1,14 +1,6 @@
 using System;
-using System.Reactive.Disposables;
-using System.Reactive.Linq;
-using CoreLocation;
-using Foundation;
-using RxPosition.Core;
-using RxPosition.iOS;
-using UIKit;
 
-namespace RxPosition
+namespace RxPosition.iOS
 {
     public class LocationServicesAccessDenied : AccessViolationException { }
-    
 }

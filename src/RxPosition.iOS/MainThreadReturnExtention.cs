@@ -1,6 +1,6 @@
 using Foundation;
 
-namespace RxPosition
+namespace RxPosition.iOS
 {
     public static class MainThreadReturnExtention
     {

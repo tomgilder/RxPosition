@@ -3,7 +3,7 @@ using System.Linq;
 using System.Reactive.Linq;
 using CoreLocation;
 
-namespace RxPosition
+namespace RxPosition.iOS
 {
     public static class CLLocationManagerExtentions
     {

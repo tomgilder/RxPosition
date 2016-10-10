@@ -1,8 +1,8 @@
 using System;
 using CoreLocation;
-using RxPosition.Core;
+using RxPosition;
 
-namespace RxPosition
+namespace RxPosition.iOS
 {
     static class CLLocationExtentions
     {

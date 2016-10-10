@@ -1,6 +1,6 @@
 using System;
 
-namespace RxPosition.Core
+namespace RxPosition
 {
     public interface IRxPosition
     {

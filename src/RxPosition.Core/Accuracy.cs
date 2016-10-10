@@ -1,4 +1,4 @@
-namespace RxPosition.Core
+namespace RxPosition
 {
     public struct Accuracy
     {

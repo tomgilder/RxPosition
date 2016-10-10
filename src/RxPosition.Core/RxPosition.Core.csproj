@@ -6,7 +6,7 @@
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{FA4353D8-D23E-4BE8-8AFF-4CABA6F19581}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>RxLocation.Core</RootNamespace>
+    <RootNamespace>RxLocation</RootNamespace>
     <AssemblyName>RxLocation.Core</AssemblyName>
     <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>

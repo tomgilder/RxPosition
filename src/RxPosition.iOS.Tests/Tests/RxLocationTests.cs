@@ -2,8 +2,6 @@ using System;
 using System.Threading.Tasks;
 using Xunit;
 using System.Reactive.Linq;
-using RxPosition.Core;
-using Foundation;
 
 namespace RxPosition.iOS.Tests
 {

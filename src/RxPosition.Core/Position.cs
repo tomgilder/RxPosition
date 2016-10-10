@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 
-namespace RxPosition.Core
+namespace RxPosition
 {
     public class Position
     {
