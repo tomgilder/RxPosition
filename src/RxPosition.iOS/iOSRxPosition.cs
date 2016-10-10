@@ -1,60 +1,56 @@
 ﻿using System;
-using RxPosition.Core;
-using CoreLocation;
-using System.Reactive.Linq;
-using UIKit;
 using System.Reactive.Disposables;
+using System.Reactive.Linq;
+using CoreLocation;
 using Foundation;
+using RxPosition.Core;
 using RxPosition.iOS;
+using UIKit;
 
 namespace RxPosition
 {
-    public class LocationServicesAccessDenied : AccessViolationException { }
-
     public class iOSRxPosition : IRxPosition
     {
         public IObservable<Position> Position { get; }
+        public CLLocationManager LocationManager { get; }
 
-        public iOSRxPosition() : this(DefaultLocationManagerFactory)
+        public iOSRxPosition() : this(CreateDefaultLocationManager)
         {            
         }
 
-        public iOSRxPosition(Func<CLLocationManager> locationManagerFactory)
+        public iOSRxPosition(Func<CLLocationManager> createLocationManager)
         {
-            _locationManagerFactory = locationManagerFactory;
+            LocationManager = createLocationManager();
 
             Position = Observable.Create<Position>(Subscribe)
                 .Publish()
                 .RefCount();
         }
 
-        readonly Func<CLLocationManager> _locationManagerFactory;
-
         IDisposable Subscribe(IObserver<Position> observer)
         {
-            var manager = _locationManagerFactory();
-            manager.StartUpdatingLocation();
+            LocationManager.StartUpdatingLocation();
 
             return new CompositeDisposable
             (
-                manager.ObservableLocation()
+                LocationManager.ObservableLocation()
                        .Select(l => l.ToRxPosition())
                        .Subscribe(observer),
 
-                manager.ObservableAuthorizationStatus()
+                LocationManager.ObservableAuthorizationStatus()
                        .Where(status => status.IsDenied())
                        .Select(_ => new LocationServicesAccessDenied())
                        .Subscribe(observer.OnError),
 
-                manager.ObservableAuthorizationStatus()
+                LocationManager.ObservableAuthorizationStatus()
                        .Where(status => status == CLAuthorizationStatus.NotDetermined)
-                    .Subscribe(_ => manager.RequestAuthorization(NSBundle.MainBundle)),
+                       .Subscribe(_ => LocationManager.RequestAuthorization(NSBundle.MainBundle)),
 
-                Disposable.Create(manager.StopUpdatingLocation)
+                Disposable.Create(LocationManager.StopUpdatingLocation)
             );
         }
 
-        static CLLocationManager DefaultLocationManagerFactory()
+        static CLLocationManager CreateDefaultLocationManager()
         {
             // CLLocationManager must always be created on the main thread
             // otherwise it doesn't get callbacks from its delegate
